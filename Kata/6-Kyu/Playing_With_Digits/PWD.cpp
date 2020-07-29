@@ -9,15 +9,15 @@ int solve(int n, int p)
   int sum = 0, power = p;
   for(char c : ns)
   {
-    sum += pow((c-'0'), power);
-    power++;
+    sum += pow((c-'0'), power++);
+    //power++; The increment operators are powerful
   }
-  int k = sum / n;
-  if(sum % n == 0)
-  {
-    return k;
-  }
-  return -1;
+  // if(sum % n == 0)
+  // {
+  //   return k;
+  // }
+  // return -1;
+  return sum % n == 0 ? sum/n : -1;
 }
 template<class Ti, class To>
 void func(Ti &i, To &o, ifstream &c)
