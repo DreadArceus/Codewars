@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <algorithm>
 //#include <cstdio>
 using namespace std;
 bool isVowel(char c)
@@ -8,16 +9,7 @@ bool isVowel(char c)
   return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
 int getCount(const string& inputStr){
-  int num_vowels = 0;
-  //your code here
-  for(char c : inputStr) //for loop across the given string.
-  {
-    if(isVowel(c)) //checking for any of the 5 vowels
-    {
-      num_vowels++;
-    }
-  }
-  return num_vowels;
+  return count_if(inputStr.begin(), inputStr.end(), isVowel);
 }
 
 int main()
